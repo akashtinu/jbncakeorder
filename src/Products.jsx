@@ -82,6 +82,8 @@ function Products({ id }) {
       style: {
         background: "pink",
         color: "#000",
+        marginTop: "60px",
+        position: "absolute",
         fontWeight: "600",
       },
     });

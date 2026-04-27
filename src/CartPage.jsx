@@ -43,13 +43,14 @@ function CartPage({ onClose }) {
                 <img src={item.image} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-content">
                   <h3>{item.name}</h3>
-                  <p className="cart-item-weight">Weight: {item.weight}g</p>
-                  <p className="cart-item-price">Price: ₹{(item.price * (item.weight / 500)).toFixed(2)}</p>
+                  {/* <p className="cart-item-weight" >Weight : {item.weight} g</p> */}
+                  <p className="cart-item-price">Price : ₹ {(item.price * (item.weight / 500)).toFixed(0)}</p>
                   <div className="cart-item-controls">
+                    <span> Weight : </span>
                     <button type="button" onClick={() => updateWeight(item.id, -250)}>
                       -
                     </button>
-                    <span>{item.weight}g</span>
+                    <span> {item.weight} g</span>
                     <button type="button" onClick={() => updateWeight(item.id, 250)}>
                       +
                     </button>
@@ -57,13 +58,13 @@ function CartPage({ onClose }) {
                   <div className="cart-item-details">
                     <input
                       type="text"
-                      placeholder="Celebration (e.g., Birthday)"
+                      placeholder="Occasion (e.g., Birthday, Wedding)"
                       value={item.celebration}
                       onChange={(e) => updateItemDetails(item.id, { celebration: e.target.value })}
                     />
                     <input
                       type="text"
-                      placeholder="Whose name"
+                      placeholder="Message on cake (e.g., Happy Birthday Name)"
                       value={item.whoseName}
                       onChange={(e) => updateItemDetails(item.id, { whoseName: e.target.value })}
                     />
